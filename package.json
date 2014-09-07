@@ -1,0 +1,22 @@
+{
+  "name": "STAN-Loader",
+  "version": "1.0.0",
+  "author": "Andrew Womersley",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:awomersley/stan-loader.git"
+  },
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "http://www.apache.org/licenses/"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-connect": "~0.7.0",
+    "grunt-banner": "~0.2.0"
+  }
+}

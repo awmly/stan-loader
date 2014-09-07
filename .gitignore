@@ -1,0 +1,8 @@
+!.gitignore
+
+#Files
+.DS_Store
+*~
+
+#Folder
+node_modules
