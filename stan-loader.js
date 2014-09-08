@@ -11,7 +11,10 @@
     libs      = l;
     callback  = c;
 
-    addScript(libs[0]);
+    if(document.addEventListener)
+      document.addEventListener('DOMContentLoaded', addScript );
+    else
+      window.attachEvent('onload', addScript );
 
   }
 
@@ -21,7 +24,7 @@
 
     if(libs[loadCount]){
 
-      addScript(libs[loadCount]);
+      addScript();
 
     }else{
 
@@ -31,11 +34,11 @@
 
   }
 
-  function addScript(src){
+  function addScript(){
 
     var   script = document.createElement('script');
           script.type='text/javascript';
-          script.src=src;
+          script.src=libs[loadCount];
 
     if('onload' in script){ // IE10+
 
