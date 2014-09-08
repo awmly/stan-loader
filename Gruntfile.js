@@ -7,9 +7,6 @@ module.exports = function(grunt) {
         banner: '/*!\n' + ' * STAN Loader <%= pkg.version %>\n' + ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' + ' */\n',
 
         watch: {
-            options: {
-                livereload: true
-            },
             html: {
                 files: ['index.html']
             },
@@ -24,31 +21,21 @@ module.exports = function(grunt) {
                 options: {
                     port: 8080,
                     open: true,
-                    livereload: true
                 }
             }
         },
 
         uglify: {
             dist: {
+                options:{
+                  banner : '<%= banner %>',
+                },
                 files: {
                     'stan-loader.min.js': ['stan-loader.js']
                 }
             }
-        },
-
-        usebanner: {
-            dist: {
-                options: {
-                    position: 'top',
-                    banner: '<%= banner %>',
-                    linebreak: true
-                },
-                files: {
-                    src: ['dist/*.js', 'dist/*.css', '!dist/*.map']
-                }
-            }
         }
+        
     };
 
     // Init grunt config
