@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                 }
             }
         }
-        
+
     };
 
     // Init grunt config
@@ -45,7 +45,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-banner');
 
     // Register tasks
     grunt.registerTask('default', ['uglify','connect','watch']);
