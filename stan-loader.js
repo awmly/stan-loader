@@ -8,21 +8,54 @@
   var methodVar = win.$STAN_Loader || '$STAN_Load',
     loadCount = 0,
     libs,
-    callback;
+    successCallback,
+    errorCallback;
 
   /*
    * Set libs and callback from the public method
    */
-  function init(_libs, _callback) {
+  function init(_libs, _successCallback, _errorCallback) {
 
     libs = _libs;
-    callback = _callback;
+    successCallback = _successCallback;
+    errorCallback = _errorCallback;
 
-    // add window load listeners (W3C : IE8/9)
+    // add window load listeners (W3C : IE8)
     if (doc.addEventListener)
       doc.addEventListener('DOMContentLoaded', addScript);
     else
       win.attachEvent('onload', addScript);
+
+  }
+
+  /*
+   * Set libs and callback from the public method
+   */
+  function loaded() {
+
+    // Incriment loadCount
+    loadCount++;
+
+    // Check for libs to load - else perform callback
+    if (libs[loadCount]) {
+
+      addScript();
+
+    } else {
+
+      // Check callback is a function
+      if (typeof(successCallback) == 'function') successCallback();
+
+    }
+
+  }
+
+  /*
+   * Set libs and callback from the public method
+   */
+  function errored() {
+
+    if (typeof(errorCallback) == 'function') errorCallback();
 
   }
 
@@ -41,7 +74,9 @@
 
       script.onload = loaded;
 
-    } else { // IE8/9
+      script.onerror = errored;
+
+    } else { // IE8
 
       script.onreadystatechange = function() {
 
@@ -49,28 +84,6 @@
           loaded();
 
       };
-
-    }
-
-    /*
-     * Set libs and callback from the public method
-     */
-    function loaded() {
-
-      // Incriment loadCount
-      loadCount++;
-
-      // Check for libs to load - else perform callback
-      if (libs[loadCount]) {
-
-        addScript();
-
-      } else {
-
-        // Check callback is a function
-        if( typeof(callback)=='function' ) callback();
-
-      }
 
     }
 
