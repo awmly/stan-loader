@@ -1,6 +1,6 @@
-## STAN Loader [![Build Status](https://travis-ci.org/awomersley/stan-loader.svg?branch=master)](https://travis-ci.org/awomersley/stan-loader)
+# STAN Loader [![Build Status](https://travis-ci.org/awomersley/stan-loader.svg?branch=master)](https://travis-ci.org/awomersley/stan-loader)
 
-Really simple JS script loader that will load an array of libraries and then execute a callack function.
+Really simple JS script loader that will load an array of libraries and then execute a callack function on load or error.
 
 ```javascript
 <script src='stan-loader.min.js'></script>
@@ -11,7 +11,7 @@ Really simple JS script loader that will load an array of libraries and then exe
     ], function(){
       console.log("Load complete");
     }, function(){
-      console.log("Failed to load");
+      console.log("Load failed");
     });
 </script>
 ```
