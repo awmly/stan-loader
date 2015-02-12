@@ -1,0 +1,6 @@
+build_settings:
+setup:
+test:
+    grunt:
+        task: "uglify"
+complete:
