@@ -5,8 +5,7 @@
 (function(win, doc) {
 
 	// Decale variables
-	var methodVar = win.$STAN_Loader || '$STAN_Load',
-		loadCount = 0,
+	var loadCount = 0,
 		libs,
 		successCallback,
 		errorCallback;
@@ -99,6 +98,6 @@
 	}
 
 	// declare public method
-	win[methodVar] = init;
+	win['$STAN_Load'] = init;
 
 })(window, document);
