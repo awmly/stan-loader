@@ -4,95 +4,101 @@
  */
 (function(win, doc) {
 
-  // Decale variables
-  var methodVar = win.$STAN_Loader || '$STAN_Load',
-    loadCount = 0,
-    libs,
-    successCallback,
-    errorCallback;
+	// Decale variables
+	var methodVar = win.$STAN_Loader || '$STAN_Load',
+		loadCount = 0,
+		libs,
+		successCallback,
+		errorCallback;
 
-  /*
-   * Set libs and callback from the public method
-   */
-  function init(_libs, _successCallback, _errorCallback) {
+	/*
+	 * Set libs and callback from the public method
+	 */
+	function init(_libs, _successCallback, _errorCallback) {
 
-    libs = _libs;
-    successCallback = _successCallback;
-    errorCallback = _errorCallback;
+		libs = _libs;
+		successCallback = _successCallback;
+		errorCallback = _errorCallback;
 
-    // add window load listeners (W3C : IE8)
-    if (doc.addEventListener)
-      doc.addEventListener('DOMContentLoaded', addScript);
-    else
-      win.attachEvent('onload', addScript);
+		// add window load listeners (W3C : IE8)
+		if (doc.addEventListener) {
+			doc.addEventListener('DOMContentLoaded', addScript);
+		} else {
+			win.attachEvent('onload', addScript);
+		}
 
-  }
+	}
 
-  /*
-   * Set libs and callback from the public method
-   */
-  function loaded() {
+	/*
+	 * Set libs and callback from the public method
+	 */
+	function loaded() {
 
-    // Incriment loadCount
-    loadCount++;
+		// Incriment loadCount
+		loadCount++;
 
-    // Check for libs to load - else perform callback
-    if (libs[loadCount]) {
+		// Check for libs to load - else perform callback
+		if (libs[loadCount]) {
 
-      addScript();
+			addScript();
 
-    } else {
+		} else {
 
-      // Check callback is a function
-      if (typeof(successCallback) == 'function') successCallback();
+			// Check callback is a function
+			if (typeof(successCallback) === 'function') {
+				successCallback();
+			}
 
-    }
+		}
 
-  }
+	}
 
-  /*
-   * Set libs and callback from the public method
-   */
-  function errored() {
+	/*
+	 * Set libs and callback from the public method
+	 */
+	function errored() {
 
-    if (typeof(errorCallback) == 'function') errorCallback();
+		if (typeof(errorCallback) === 'function') {
+			errorCallback();
+		}
 
-  }
+	}
 
-  /*
-   * Create and add the script to the head
-   */
-  function addScript() {
+	/*
+	 * Create and add the script to the head
+	 */
+	function addScript() {
 
-    var script = doc.createElement('script');
-    script.type = 'text/javascript';
-    script.src = libs[loadCount];
-    script.async = true;
+		var script = doc.createElement('script');
+		script.type = 'text/javascript';
+		script.src = libs[loadCount];
+		script.async = true;
 
-    // Set onload events for newly added script
-    if ('onload' in script) { // W3C
+		// Set onload events for newly added script
+		if ('onload' in script) { // W3C
 
-      script.onload = loaded;
+			script.onload = loaded;
 
-      script.onerror = errored;
+			script.onerror = errored;
 
-    } else { // IE8
+		} else { // IE8
 
-      script.onreadystatechange = function() {
+			script.onreadystatechange = function() {
 
-        if (this.readyState == 'complete' || this.readyState == 'loaded')
-          loaded();
+				if (this.readyState === 'complete' || this.readyState === 'loaded') {
+					loaded();
+				}
 
-      };
+			};
 
-    }
+		}
 
-    // Add the html to the head
-    doc.getElementsByTagName("head")[0].appendChild(script);
+		// Add the html to the head
+		doc.getElementsByTagName("head")[0].appendChild(script);
 
-  }
+	}
 
-  // declare public method
-  win[methodVar] = init;
+	// declare public method
+	win[methodVar] = init;
 
 })(window, document);
