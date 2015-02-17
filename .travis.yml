@@ -10,8 +10,12 @@ install:
   - npm install
 
 script:
-  - karma start tests/karma-travis.js main
-  - karma start tests/karma-travis.js ie
+  - karma start tests/karma-travis.js 'Windows 7' chrome
+  - karma start tests/karma-travis.js 'Windows 7' firefox
+  - karma start tests/karma-travis.js 'OS X 10.10' safari
+  - karma start tests/karma-travis.js 'Windows 7' 'internet explorer' 11
+  - karma start tests/karma-travis.js 'Windows 7' 'internet explorer' 10
+  - karma start tests/karma-travis.js 'Windows 7' 'internet explorer' 9
 
 env:
   global:
