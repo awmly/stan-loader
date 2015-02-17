@@ -7,7 +7,8 @@ module.exports = function(config) {
 	karmaConfig.sauceLabs = {
 		testName: 'STAN Loader',
 		public: 'public',
-		build: process.env.TRAVIS_BUILD_NUMBER
+		build: process.env.TRAVIS_BUILD_NUMBER,
+		passed: true
 	};
 
 	karmaConfig.customLaunchers = customLaunchers;
