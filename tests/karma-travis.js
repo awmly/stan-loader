@@ -23,19 +23,25 @@ if (version) {
 
 module.exports = function(config) {
 
+	// Set sauce labs object
 	karmaConfig.sauceLabs = {
 		public: 'public',
 		testName: 'STAN Loader Tests',
 	};
 
+	// Set reporters
 	karmaConfig.reporters = ['saucelabs', 'spec'];
 
+	// Set custom launchers
 	karmaConfig.customLaunchers = customLaunchers;
 
+	// Set browser info from custom launchers
 	karmaConfig.browsers = Object.keys(customLaunchers);
 
+	// Set loglevel
 	karmaConfig.logLevel = config.LOG_INFO;
 
+	// Set config
 	config.set(karmaConfig);
 
 };
