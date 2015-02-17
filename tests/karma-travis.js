@@ -4,7 +4,7 @@ var customLaunchers = require('./karma-browsers.js');
 
 module.exports = function(config) {
 
-	karmaConfig.sauceLabs: {
+	karmaConfig.sauceLabs = {
 		testName: 'STAN Loader',
 		public: 'public',
 		build: process.env.TRAVIS_BUILD_NUMBER
