@@ -11,8 +11,8 @@ describe('stan-loader-ok', function() {
 
 		// Initiate $STAN loader using normal window load events
 		$STAN_Load([
-			'//code.jquery.com/jquery-1.10.1.min.js',
-			'//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'
+			'//code.jquery.com/jquery-1.11.2.min.js',
+			'//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'
 		], function() {
 			status = 'ok';
 			done();
