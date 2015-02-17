@@ -49,6 +49,15 @@ module.exports = function(config) {
 		build: 'local'
 	};
 
+	// Set timeout to 30 secs
+	karmaConfig.browserNoActivityTimeout = 30000;
+
+	// Set capture timeout to 2 mins
+	karmaConfig.captureTimeout = 120000;
+
+	// Try each browser 3 times incase of disconnects
+	karmaConfig.browserDisconnectTolerance = 3;
+
 	// Set reporters
 	karmaConfig.reporters = ['saucelabs', 'spec'];
 
