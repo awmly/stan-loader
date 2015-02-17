@@ -15,3 +15,8 @@ Really simple JS script loader that will load an array of libraries and then exe
     });
 </script>
 ```
+## Browser Compatibility
+
+STAN Loader has been tested on all modern browsers - see the matrix from Sauce Labs below. For IE8 the only limitation is if the loader fails the success callback is still called.
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/stan-loader.svg?auth=d83fbc6cd64b33ed71f758b863f47d9d)](https://saucelabs.com/u/stan-loader)
