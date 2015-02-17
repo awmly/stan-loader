@@ -19,16 +19,16 @@ var browser = process.argv[5];
 var version = process.argv[6];
 
 var customLaunchers = {
-	'SauceLabs': {
+	'SL_Browser': {
 		base: 'SauceLabs',
 		browserName: browser,
 		platform: platform
 	}
-}
+};
 
 if (version) {
-	customLaunchers.SauceLabs.version = version;
-}
+	customLaunchers.SL_Browser.version = version;
+};
 
 
 module.exports = function(config) {
