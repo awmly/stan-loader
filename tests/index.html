@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>STAN Loader Test</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+
+  <h1>STAN Loader Test</h1>
+
+  <div class='test collapse in'>
+    <h4>You Can't See Me!!!</h4>
+  </div>
+
+  <script src='../stan-loader.min.js'></script>
+  <script>
+  $STAN_Load([
+    '//code.jquery.com/jquery-1.11.2.min.js',
+    '//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'
+  ], function(){
+    $('.test').collapse('hide');
+    console.log("LOAD");
+  }, function(){
+    console.log("ERROR");
+  });
+  </script>
+
+</body>
+</html>
