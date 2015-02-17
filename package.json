@@ -6,16 +6,22 @@
     "type": "git",
     "url": "git@gitlab.com:awomersley/stan-loader.git"
   },
-  "licenses": [
-    {
-      "type": "Apache",
-      "url": "http://www.apache.org/licenses/"
-    }
-  ],
+  "licenses": [{
+    "type": "Apache",
+    "url": "http://www.apache.org/licenses/"
+  }],
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-connect": "~0.7.0"
+    "grunt-contrib-connect": "~0.7.0",
+    "karma": "^0.12.0",
+    "karma-jasmine": "^0.2.2",
+    "karma-sauce-launcher": "^0.2.3",
+    "karma-chrome-launcher": "^0.1.2",
+    "karma-firefox-launcher": "^0.1.0",
+    "karma-safari-launcher": "^0.1.0",
+    "karma-cli": "0.0.4",
+    "karma-spec-reporter": "0.0.13"
   }
 }

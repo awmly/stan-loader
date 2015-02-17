@@ -3,19 +3,16 @@ language: node_js
 node_js:
   - "0.12"
 
-env:
-  global:
-    - secure: Uo//yA5R6BY5V7w4UvybfBjWlqx+QnWSQwwgEWQzeLg/MiCfbyzktq2viS2H5EVc5wAMIPeoZ0+E3jI6i/zu5p/MHe73qT0oo4mZFpI8eIHnjadvXIO9oK9bRFHRKHFukOcvZP3rWAX6r9w81Ieer+BW10bDhkVpaq2SireHzzY=
-    - secure: PKakai9qxtvCbupSna70hQ17r4hgp5heAL3bc50OEdE2tnDtitdOYR3FTejRCt6Dfq03X4C6SLvO6UX6dtuDcjGK3Zq9/PFuXJNJbUNxrYi8U35zhJ1H57axhvfM77+8o+kGZhObJ6BjtEgtzh4I/zjR8QM3nIpMQtwbCQJAQuE=
-
 before_install:
-  - npm install -g grunt-cli
+  - npm install -g karma-cli
 
 install:
   - npm install
 
-before_script:
-  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
-
 script:
-  - grunt uglify
+  - karma start tests/karma-travis.js
+
+env:
+  global:
+    - secure: FTpJDb54mevlN12OgAcLBksRLhaOwezKb+9BDKPL1kFJROddf2aNbkXY3mEazM1xgLu0KX3Uqj++Y0v0Ohdmhdz3Pp5BW55+4gjLaf/a+WKuILnSLfs6CAKpcJdbt89oAE4utY6vYFlFafIej9eXCfbgr/9JOA8f6Ww2gdURlgE=
+    - secure: cHrZBq+vreOUmi9ls/EMJQD64kLT7E9LzB2YatN9X/h4JBvt1FEJ1MdEWJA13/+BeqWLgjMxPod+/gk8E0Ti+WtDUjbbwqrosOdpFLxm0CFvX0adBWTnphOQxOq1ZyPN/a3zG9dxjDEeFT066809afhqbFf1k1x/661szN6chDE=
