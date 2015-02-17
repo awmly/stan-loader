@@ -10,7 +10,8 @@ install:
   - npm install
 
 script:
-  - karma start tests/karma-travis.js
+  - karma start tests/karma-travis.js main
+  - karma start tests/karma-travis.js ie
 
 env:
   global:

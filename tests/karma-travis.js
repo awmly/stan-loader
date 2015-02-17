@@ -1,11 +1,22 @@
 var karmaConfig = require('./karma-base.js');
 
-var customLaunchers = require('./karma-browsers.js');
+var browserSet = process.argv[4];
+
+if (browserSet == 'main') {
+
+	var customLaunchers = require('./karma-browsers-main.js');
+
+} else if (browserSet == 'ie') {
+
+	var customLaunchers = require('./karma-browsers-ie.js');
+
+}
 
 module.exports = function(config) {
 
 	karmaConfig.sauceLabs = {
-		public: 'public'
+		public: 'public',
+		testName: 'STAN Loader Tests',
 	};
 
 	karmaConfig.reporters = ['saucelabs', 'spec'];
