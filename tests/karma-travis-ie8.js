@@ -26,8 +26,7 @@ module.exports = function(config) {
 	// Don't run error test in IE8 as we know it will fail due to limitation of broswer
 	karmaConfig.files = [
 		'../stan-loader.min.js',
-		'test-load-ok.js',
-		'test-load-error.js'
+		'test-load-ok.js'
 	];
 
 	// Set sauce labs object
