@@ -18,6 +18,7 @@ script:
   - karma start tests/karma-travis.js 'Windows 7' 'internet explorer' 11
   - karma start tests/karma-travis.js 'Windows 7' 'internet explorer' 10
   - karma start tests/karma-travis.js 'Windows 7' 'internet explorer' 9
+  - karma start tests/karma-travis-ie8.js 'Windows 7' 'internet explorer' 8
   - karma start tests/karma-travis.js 'Linux' android 5
   - karma start tests/karma-travis.js 'OS X 10.10' iphone 8.1
   - karma start tests/karma-travis.js 'OS X 10.10' ipad 8.1
