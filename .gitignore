@@ -3,6 +3,7 @@
 #Files
 .DS_Store
 *~
+tests/sauce.json
 
 #Folder
 node_modules

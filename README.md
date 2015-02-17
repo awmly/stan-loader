@@ -20,3 +20,30 @@ Really simple JS script loader that will load an array of libraries and then exe
 STAN Loader has been tested on all modern browsers - see the matrix from Sauce Labs below. For IE8 the only limitation is if the loader fails the success callback is still called.
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/stan-loader.svg?auth=d83fbc6cd64b33ed71f758b863f47d9d)](https://saucelabs.com/u/stan-loader)
+
+## Testing
+
+To test on saucelabs browsers from local server create file `tests/sauce.json` with the following content;
+
+```
+{
+    "username": "yourSauceUsername",
+    "accessKey": "yourSauceAccessKey"
+}
+```
+
+You can then test using the following commands
+
+```
+karma start tests/karma-saucelabs.js 'Windows 7' chrome
+karma start tests/karma-saucelabs.js 'OS X 10.10' chrome
+karma start tests/karma-saucelabs.js 'Windows 7' firefox
+karma start tests/karma-saucelabs.js 'OS X 10.10' firefox
+karma start tests/karma-saucelabs.js 'OS X 10.10' safari
+karma start tests/karma-saucelabs.js 'Windows 7' 'internet explorer' 11
+karma start tests/karma-saucelabs.js 'Windows 7' 'internet explorer' 10
+karma start tests/karma-saucelabs.js 'Windows 7' 'internet explorer' 9
+karma start tests/karma-saucelabs.js 'Linux' android 5
+karma start tests/karma-saucelabs.js 'OS X 10.10' iphone 8.1
+karma start tests/karma-saucelabs.js 'OS X 10.10' ipad 8.1
+```

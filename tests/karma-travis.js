@@ -1,23 +1,12 @@
+// Get base config
 var karmaConfig = require('./karma-base.js');
 
-/*
-var browserSet = process.argv[4];
-
-if (browserSet == 'main') {
-
-	var customLaunchers = require('./karma-browsers-main.js');
-
-} else if (browserSet == 'ie') {
-
-	var customLaunchers = require('./karma-browsers-ie.js');
-
-}
-*/
-
+// Get platform/browser/version from passed args
 var platform = process.argv[4];
 var browser = process.argv[5];
 var version = process.argv[6];
 
+// Set custom launcher object
 var customLaunchers = {
 	'SL_Browser': {
 		base: 'SauceLabs',
@@ -26,6 +15,7 @@ var customLaunchers = {
 	}
 };
 
+// Add version number if set
 if (version) {
 	customLaunchers.SL_Browser.version = version;
 };
