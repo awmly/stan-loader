@@ -17,33 +17,14 @@ Really simple JS script loader that will load an array of libraries and then exe
 ```
 ## Browser Compatibility
 
-STAN Loader has been tested on all modern browsers - see the matrix from Sauce Labs below. For IE8 the only limitation is if the loader fails the success callback is still called.
+STAN Loader has been tested on all modern browsers - see the matrix from Sauce Labs below. Note that in IE8 the success callback is called even on error.
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/stan-loader.svg?auth=d83fbc6cd64b33ed71f758b863f47d9d)](https://saucelabs.com/u/stan-loader)
 
-## Testing
+### Author
 
-To test on saucelabs browsers from local server create file `tests/sauce.json` with the following content;
+##### [Andrew Womersley](https://plus.google.com/+AndrewWomersley).
 
-```
-{
-    "username": "yourSauceUsername",
-    "accessKey": "yourSauceAccessKey"
-}
-```
+### Copyright and License
 
-You can then test using the following commands
-
-```
-karma start tests/karma-saucelabs.js 'Windows 7' chrome
-karma start tests/karma-saucelabs.js 'OS X 10.10' chrome
-karma start tests/karma-saucelabs.js 'Windows 7' firefox
-karma start tests/karma-saucelabs.js 'OS X 10.10' firefox
-karma start tests/karma-saucelabs.js 'OS X 10.10' safari
-karma start tests/karma-saucelabs.js 'Windows 7' 'internet explorer' 11
-karma start tests/karma-saucelabs.js 'Windows 7' 'internet explorer' 10
-karma start tests/karma-saucelabs.js 'Windows 7' 'internet explorer' 9
-karma start tests/karma-saucelabs.js 'Linux' android 5
-karma start tests/karma-saucelabs.js 'OS X 10.10' iphone 8.1
-karma start tests/karma-saucelabs.js 'OS X 10.10' ipad 8.1
-```
+Copyright 2015 Smart Arts UK Ltd under [the MIT license](LICENSE).
